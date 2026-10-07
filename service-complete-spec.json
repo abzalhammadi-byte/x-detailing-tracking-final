@@ -1,0 +1,8 @@
+{
+  "icon": "assets/service-complete.svg",
+  "titleAr": "تمت الخدمة بنجاح",
+  "shows": ["bookingSummary", "technicianName", "vanNumber"],
+  "then": ["technician rating", "service rating", "optional comment", "optional tip", "done"],
+  "notIncluded": ["app rating", "app store review"],
+  "stopSharingLocation": true
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 144" fill="none">
+  <!-- Fallback silhouette only. Production marker is tracking-van-marker@3x.png. Nose points up. Anchor 0.5, 0.5. No pulse. -->
+  <rect x="14" y="8" width="40" height="128" rx="12" fill="#10151C" stroke="#3AD7FF" stroke-width="2"/>
+  <path d="M20 16 H48 C50 28 50 40 48 46 H20 C18 40 18 28 20 16 Z" fill="#1A3348"/>
+  <path d="M26 62 L34 48 L42 62 M26 78 L42 62 M42 78 L26 62" stroke="#3AD7FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="18" y="124" width="8" height="4" rx="1" fill="#8AF0FF"/>
+  <rect x="42" y="124" width="8" height="4" rx="1" fill="#8AF0FF"/>
+</svg>

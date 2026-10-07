@@ -1,0 +1,90 @@
+{
+  "name": "X Detailing live tracking",
+  "version": "1.0.0",
+  "visualQa": "Numbers on preview images are VISUAL QA DATA. Do not ship them as live ETA, distance, or progress.",
+  "basemap": {
+    "name": "CARTO Dark Matter",
+    "attribution": "© OpenStreetMap contributors, © CARTO",
+    "keepAttributionVisible": true,
+    "keyPlaceholder": "${CARTO_BASEMAP_API_KEY}",
+    "keyRule": "Read the key from secure app config at runtime. Do not commit it. Do not request tiles when it is empty, or the raster map shows an API KEY REQUIRED watermark.",
+    "vector": {
+      "preferred": true,
+      "renderer": "MapLibre or a compatible React Native vector map",
+      "styleUrl": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json?key=${CARTO_BASEMAP_API_KEY}",
+      "note": "Vector is the higher-fidelity option. Pass the same key on every style, glyph, and sprite URL."
+    },
+    "raster": {
+      "renderer": "Tile overlay, including react-native-maps UrlTile",
+      "urlTemplate": "https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{scale}.png?key=${CARTO_BASEMAP_API_KEY}",
+      "subdomains": ["a", "b", "c", "d"],
+      "scale": { "1x": "", "2x": "@2x" },
+      "minZoom": 0,
+      "maxZoom": 20,
+      "style": "dark_all"
+    }
+  },
+  "colors": {
+    "bg": "#05070D",
+    "land": "#070D18",
+    "surface": "#0C1422",
+    "line": "#1C2D48",
+    "cyan": "#3AD7FF",
+    "cyanHot": "#8AF0FF",
+    "text": "#F3F7FB",
+    "muted": "#8EA0B8",
+    "amber": "#F0A43A",
+    "green": "#3EE59A",
+    "ink": "#07090E"
+  },
+  "route": {
+    "drawOnlyWhenProvided": true,
+    "core": { "color": "#3AD7FF", "widthPt": 4, "opacity": 0.95 },
+    "glow": { "color": "#3AD7FF", "widthPt": 10, "opacity": 0.22 },
+    "stale": { "color": "#F0A43A", "dash": [7, 8] },
+    "productionSafe": "Two polylines. Wide translucent stroke first, thin core on top. Apple and Google polylines have no true neon shadow."
+  },
+  "van": {
+    "primary": "assets/tracking-van-marker@3x.png",
+    "master": "assets/tracking-van-marker-primary.png",
+    "svgFallback": "assets/tracking-van-marker.svg",
+    "pixels": { "1x": [17, 36], "2x": [34, 72], "3x": [51, 108] },
+    "displayPt": [17, 36],
+    "clearAtPt": [32, 36, 40, 44],
+    "anchor": { "x": 0.5, "y": 0.5 },
+    "headingZero": "Nose points north / up",
+    "background": "transparent",
+    "containsPulse": false
+  },
+  "pulse": {
+    "file": "assets/tracking-live-pulse.svg",
+    "belowVan": true,
+    "rotate": false,
+    "durationMs": 1800,
+    "from": { "scale": 0.65, "opacity": 0.75 },
+    "to": { "scale": 1.7, "opacity": 0 },
+    "reduceMotion": "Hide the ring. Keep the van still in place."
+  },
+  "recenter": {
+    "file": "assets/tracking-recenter.svg",
+    "buttonPt": 44,
+    "behavior": [
+      "Van and destination: fit both with 48pt padding.",
+      "Van only: center the van.",
+      "Destination or customer only: center that point.",
+      "After the customer pans or pinches, turn follow mode off.",
+      "Recenter turns follow mode back on."
+    ]
+  },
+  "states": {
+    "WAITING_FOR_ASSIGNMENT": { "ar": "جاري التعيين", "van": false },
+    "ASSIGNED": { "ar": "تم تعيين الفني", "van": true, "follow": false },
+    "TRACKING_STARTING": { "ar": "يبدأ التتبع", "van": true },
+    "LIVE": { "ar": "الفني بالطريق إليك", "indicator": "assets/tracking-live-indicator.svg" },
+    "LOCATION_DELAYED": { "ar": "تحديث الموقع متأخر", "indicator": "assets/tracking-location-delayed.svg", "route": "#F0A43A" },
+    "ARRIVED": { "ar": "وصل الفني", "stopOnTheWayCopy": true },
+    "SERVICE_IN_PROGRESS": { "ar": "جاري تنفيذ الخدمة" },
+    "COMPLETED": { "ar": "تمت الخدمة بنجاح", "stopLocationSharing": true }
+  },
+  "doNotFabricate": ["route", "eta", "distance", "progressPercent", "vehicleMovement"]
+}

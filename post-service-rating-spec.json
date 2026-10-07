@@ -1,0 +1,15 @@
+{
+  "component": "PostServiceExperience.tsx",
+  "presentationOnly": true,
+  "outOfScope": ["app rating", "app store review"],
+  "copy": {
+    "titleAr": "تمت الخدمة بنجاح",
+    "technicianPromptAr": "كيف كانت تجربتك مع الفني؟",
+    "technicianLabelAr": "قيّم الفني",
+    "serviceLabelAr": "قيّم الخدمة",
+    "commentAr": "أضف تعليقًا — اختياري"
+  },
+  "ratings": { "min": 0, "max": 5, "preselected": false },
+  "emits": ["onTechnicianRating", "onServiceRating", "onComment", "onContinue"],
+  "doesNotSubmit": true
+}

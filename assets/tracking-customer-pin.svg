@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Customer address. Anchor 0.5, 0.5. Use this at the customer coordinate. If it is the same point as the destination, do not also drop the destination pin. -->
+  <circle cx="32" cy="32" r="22" fill="#3AD7FF" fill-opacity="0.16" stroke="#3AD7FF" stroke-width="2"/>
+  <circle cx="32" cy="32" r="11" fill="#071018" stroke="#F3F7FB" stroke-width="2"/>
+  <path d="M32 24 L39 30 V38 H35 V33 H29 V38 H25 V30 Z" fill="#3AD7FF"/>
+</svg>

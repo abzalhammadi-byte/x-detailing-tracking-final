@@ -1,0 +1,20 @@
+{
+  "direction": "Arabic RTL for text and cards. Never mirror the map, roads, van art, heading, or pins.",
+  "safeArea": "Use the device insets. Do not hardcode a status-bar or home-indicator height. Pills sit 12pt inside the top inset. Attribution and the recenter control stay above the bottom inset.",
+  "map": {
+    "flex": 1,
+    "background": "#070D18",
+    "controls": [
+      { "id": "livePill", "place": "top-start", "visible": "LIVE" },
+      { "id": "brandLive", "place": "top-end", "asset": "assets/tracking-live-indicator.svg" },
+      { "id": "recenter", "place": "bottom-end", "sizePt": 44 }
+    ]
+  },
+  "markers": [
+    { "id": "pulse", "asset": "assets/tracking-live-pulse.svg", "rotate": false },
+    { "id": "van", "asset": "assets/tracking-van-marker@3x.png", "anchor": [0.5, 0.5], "sizePt": [17, 36], "rotate": "heading" },
+    { "id": "customer", "asset": "assets/tracking-customer-pin.svg", "anchor": [0.5, 0.5] },
+    { "id": "destination", "asset": "assets/tracking-destination-pin.svg", "onlyIfDifferentFromCustomer": true }
+  ],
+  "phones": ["iPhone XS Max", "Dynamic Island iPhones", "smaller supported iPhones"]
+}

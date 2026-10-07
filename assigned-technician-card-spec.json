@@ -1,0 +1,16 @@
+{
+  "component": "AssignedTechnicianCard.tsx",
+  "presentationOnly": true,
+  "props": ["language", "status", "technician", "assistant", "van", "onCall"],
+  "doNotHardcode": ["name", "photo", "phone", "rating", "ratingCount", "role", "vanNumber", "vanModel"],
+  "previewNamesAreVisualQaOnly": true,
+  "statuses": {
+    "assigned": "تم تعيين الفني",
+    "on_the_way": "الفني بالطريق إليك",
+    "arrived": "وصل الفني",
+    "in_progress": "جاري تنفيذ الخدمة"
+  },
+  "assistant": "Render the secondary row only when assistant is non-null.",
+  "call": "Button label is اتصال / Call. Pass technician.phone to onCall. Do not invent a number.",
+  "liveIndicator": "Show only while status is on_the_way."
+}

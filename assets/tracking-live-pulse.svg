@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" fill="none">
+  <!-- One frame of the pulse. Animate scale 0.65 to 1.7 and opacity 0.75 to 0 over 1.8s. Keep the center fixed. Do not rotate with the van. -->
+  <circle cx="44" cy="44" r="40" stroke="#3AD7FF" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="44" cy="44" r="28" stroke="#3AD7FF" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="44" cy="44" r="16" stroke="#3AD7FF" stroke-opacity="0.8" stroke-width="2"/>
+  <circle cx="44" cy="44" r="5" fill="#8AF0FF"/>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "component": "TipSelector.tsx",
+  "optional": true,
+  "preselectedAmount": null,
+  "presetsAed": [5, 10, 20],
+  "custom": "مبلغ آخر",
+  "skip": "تخطي",
+  "guiltLanguage": false,
+  "selectingAnAmountIsNotPaymentSuccess": true,
+  "emits": ["onSelectPreset", "onChooseCustom", "onCustomText", "onSkip"],
+  "payment": "Codex / backend. This component never confirms a charge."
+}
