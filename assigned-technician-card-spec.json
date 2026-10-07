@@ -11,6 +11,7 @@
     "in_progress": "جاري تنفيذ الخدمة"
   },
   "assistant": "Render the secondary row only when assistant is non-null.",
-  "call": "Button label is اتصال / Call. Pass technician.phone to onCall. Do not invent a number.",
+  "call": "Button shows assets/technician-call.svg. Visible label is اتصال / Call. Pass technician.phone to onCall.",
+  "phone": "Render technician.phone on the card. UAE numbers are grouped as +971 XX XXX XXXX. Do not hardcode a number.",
   "liveIndicator": "Show only while status is on_the_way."
 }

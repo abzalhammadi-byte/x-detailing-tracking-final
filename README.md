@@ -36,9 +36,11 @@ The PNG is transparent and has no pulse baked in.
 
 ## 3. Pulse
 
-Add a second marker at the same coordinate, **without** rotation, using `tracking-live-pulse.svg`. Draw it before the van so it sits underneath.
+Add a second marker at the same coordinate, **without** rotation, using `assets/tracking-live-pulse.svg`. `TrackingMapVisual` scales it from `0.65` to `1.7` and fades opacity from `0.75` to `0` over 1800ms, then repeats, only while `live` is true. It stops when `stale` is true or `reduceMotion` is true.
 
-Animate scale `0.65 → 1.7` and opacity `0.75 → 0` over 1800ms. If Reduce Motion is on, or the fix is stale, do not animate. Hide the ring.
+`assets/tracking-live-indicator.svg` shows while live. `assets/tracking-location-delayed.svg` replaces it when the fix is stale. The recenter control is the 44pt glass button with `assets/tracking-recenter.svg` inside it. Customer and destination markers are `tracking-customer-pin.svg` and `tracking-destination-pin.svg`.
+
+These components import the SVG files as React components (`react-native-svg` plus `react-native-svg-transformer`). Add `svg` to Metro `sourceExts` and remove it from `assetExts`. `svg.d.ts` types that import.
 
 ## 4. CARTO vector (preferred)
 
@@ -88,7 +90,7 @@ Do not invent a route, an ETA, a distance, a progress percent, or van movement i
 
 ## 8. AssignedTechnicianCard
 
-Pass staff on props. `onCall(phone)` is the contact action. The label is **اتصال**. There is no sample employee inside the file.
+Pass staff on props. The card shows `technician.phone` (a UAE number is grouped as `+971 XX XXX XXXX`; anything else is shown as given). The call control is `assets/technician-call.svg` plus the label **اتصال**. `onCall(phone)` is the action. There is no sample employee inside the file.
 
 Status copy:
 

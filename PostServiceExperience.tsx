@@ -1,4 +1,6 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import CompleteMark from "./assets/service-complete.svg";
+import RatingStar from "./assets/rating-star.svg";
 
 export type PostServiceExperienceProps = {
   language: "ar" | "en";
@@ -28,7 +30,7 @@ function Stars({ value, onChange, label }: { value: number; onChange: (n: number
     <View accessibilityRole="adjustable" accessibilityLabel={label} style={styles.stars}>
       {[1, 2, 3, 4, 5].map((star) => (
         <Pressable key={star} onPress={() => onChange(star)} hitSlop={6}>
-          <Text style={[styles.star, star <= value ? styles.starOn : styles.starOff]}>★</Text>
+          <RatingStar width={32} height={32} opacity={star <= value ? 1 : 0.28} />
         </Pressable>
       ))}
     </View>
@@ -53,6 +55,9 @@ export function PostServiceExperience({
 
   return (
     <View style={[styles.wrap, { direction: ar ? "rtl" : "ltr" }]}>
+      <View style={styles.mark}>
+        <CompleteMark width={72} height={72} />
+      </View>
       <Text style={styles.title}>{t("title")}</Text>
       <Text style={styles.summary}>{bookingSummary}</Text>
       <Text style={styles.meta}>
@@ -79,16 +84,14 @@ export function PostServiceExperience({
 }
 
 const styles = StyleSheet.create({
-  wrap: { backgroundColor: "#070D18", padding: 20, gap: 10 },
+  wrap: { backgroundColor: "#070D18", padding: 20, gap: 10, alignItems: "stretch" },
+  mark: { alignItems: "center" },
   title: { color: "#F3F7FB", fontSize: 24, fontWeight: "700", textAlign: "center" },
   summary: { color: "#F3F7FB", fontSize: 15, textAlign: "center" },
   meta: { color: "#8EA0B8", fontSize: 13, textAlign: "center" },
   ask: { color: "#8AF0FF", fontSize: 14, marginTop: 8 },
   label: { color: "#F3F7FB", fontSize: 15, fontWeight: "600" },
   stars: { flexDirection: "row", gap: 8 },
-  star: { fontSize: 32 },
-  starOn: { color: "#3AD7FF" },
-  starOff: { color: "#1C2D48" },
   input: {
     minHeight: 88,
     borderWidth: 1,

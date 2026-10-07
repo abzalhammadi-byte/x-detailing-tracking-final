@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import TipIcon from "./assets/tip-icon.svg";
 
 export type TipSelection = { kind: "preset"; amount: number } | { kind: "custom"; amount: number } | null;
 
@@ -29,7 +30,10 @@ export function TipSelector({
 
   return (
     <View style={[styles.wrap, { direction: ar ? "rtl" : "ltr" }]}>
-      <Text style={styles.title}>{ar ? "أضف إكرامية للفني" : "Add a tip for the technician"}</Text>
+      <View style={styles.heading}>
+        <TipIcon width={28} height={28} />
+        <Text style={styles.title}>{ar ? "أضف إكرامية للفني" : "Add a tip for the technician"}</Text>
+      </View>
       <Text style={styles.note}>{ar ? "اختيارية. تقدر تتخطاها." : "Optional. You can skip it."}</Text>
       <View style={styles.row}>
         {PRESETS.map((amount) => {
@@ -69,6 +73,7 @@ export function TipSelector({
 
 const styles = StyleSheet.create({
   wrap: { backgroundColor: "#070D18", padding: 20, gap: 12 },
+  heading: { flexDirection: "row", alignItems: "center", gap: 8 },
   title: { color: "#F3F7FB", fontSize: 20, fontWeight: "700" },
   note: { color: "#8EA0B8", fontSize: 13 },
   row: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
